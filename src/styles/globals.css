@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-height {
+  height: calc(100% - 109px); /* Login */
+}
+
+.login-background {
+background-image: url('/images/login-background.svg');
+background-size: cover; 
+background-position: center;
+}
+.passsword-background {
+  background-image: url('/images/password-background.svg');
+  background-size: cover; 
+  background-position: center;
+}
+.forgotpasssword-background {
+  background-image: url('/images/forgot-password-background.svg');
+  background-size: cover; 
+  background-position: center;
+}
