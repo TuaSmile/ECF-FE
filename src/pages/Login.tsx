@@ -17,18 +17,26 @@ const Login: React.FC = () => {
     };
 
     const handleEmailSubmit = async () => {
-        try {
-            const response = await axios.post('http://localhost:8000/session/email', { email });
+        // try {
+        //     const response = await axios.post('http://localhost:4000/api/auth/login/email', { email });
 
-            if (response.status === 200) {
-                router.push({
-                    pathname: '/Password',
-                    query: { email },
-                });
-            }
-        } catch (error: any) {
-            setMessage(error.response?.data?.message || 'Email verification failed');
+        //     if (response.status === 200) {
+        //         router.push({
+        //             pathname: '/Password',
+        //             query: { email },
+        //         });
+        //     }
+        // } catch (error: any) {
+        //     setMessage(error.response?.data?.message || 'Email verification failed');
+        // }
+        if(!email) {
+            setMessage('Please enter a valid email address');
+            return;
         }
+        router.push({
+            pathname: '/Password',
+            query: {email},
+        })
     }
 
     return (
