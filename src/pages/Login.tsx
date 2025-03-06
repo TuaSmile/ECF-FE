@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import InputField from '../components/InputField';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -72,5 +71,4 @@ const Login: React.FC = () => {
         </div>
     );
 }
-
 export default Login;
