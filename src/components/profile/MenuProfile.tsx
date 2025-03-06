@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from 'next/image';
 import { DropDown } from "../layout/Icons";
 
 interface MenuProfileProps {
@@ -9,19 +10,24 @@ interface MenuProfileProps {
 
 const MenuProfile: React.FC<MenuProfileProps> = ({ image, name, role }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
-    <div className="relative bg-[#FAF5E6]">
+    <div className="relative">
       <div
-        className="flex items-center rounded-full border border-red-[#D8DCE5] gap-2 cursor-pointer"
+        className="flex items-center rounded-l-full rounded-r-full gap-2 cursor-pointer bg-[#FAF5E6]"
         onClick={toggleDropdown}
       >
         <div>
-          <img src={image} alt={`${name}'s profile`} className="rounded-full" />
+          <Image
+            src={image}
+            alt={`${name}'s profile`}
+            className="rounded-full"
+            width={40}
+            height={40}
+          />
         </div>
         <div>
           <div className="font-lato text-[12px] font-bold leading-[18px] text-[#344054]">
@@ -32,8 +38,8 @@ const MenuProfile: React.FC<MenuProfileProps> = ({ image, name, role }) => {
           </div>
         </div>
         {/* Custom SVG Icon */}
-        <div className="ml-2">
-           <DropDown color="" />
+        <div className="ml-2 pr-3">
+          <DropDown color="" />
         </div>
       </div>
 
